@@ -34,16 +34,10 @@ from People_png import img as People
 from Perfume_png import img as Perfume
 from Spices_png import img as Spices
 from Wine_png import img as Wine
+from anno1404_icon_png import img as anno1404_icon
 
 
 root = tk.Tk()
-
-# 視窗設定
-fontsize = tkFont.Font(family = "Source Han Sans", size = 14)
-root.title("Anno 1404 caculator")
-root.resizable(0,0)
-root.geometry("1235x900")
-root.iconbitmap(r"D:/python/python-anno1404/anno1404-production-caculator/images/anno1404_icon.ico")
 
 # 載入圖片
     # write file
@@ -107,6 +101,16 @@ with open("Spices.png", mode = "wb") as file:
     file.write(base64.b64decode(Spices))
 with open("Wine.png", mode = "wb") as file:
     file.write(base64.b64decode(Wine))
+with open("anno1404_icon.png", mode = "wb") as file:
+    file.write(base64.b64decode(anno1404_icon))    
+
+
+# 視窗設定
+fontsize = tkFont.Font(family = "Source Han Sans", size = 14)
+root.title("Anno 1404 caculator")
+root.resizable(0,0)
+root.geometry("1235x900")
+root.iconphoto(True, tk.PhotoImage(file = "anno1404_icon.png"))
 
     # load image
         # all
@@ -1260,6 +1264,7 @@ os.remove("People.png")
 os.remove("Perfume.png")
 os.remove("Spices.png")
 os.remove("Wine.png")
+os.remove("anno1404_icon.png")
 
 
 root.mainloop()
